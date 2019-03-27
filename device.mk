@@ -284,6 +284,9 @@ PRODUCT_PACKAGES += \
     TelephonyResSweet \
     WifiResSweet
 
+PRODUCT_PACKAGES += \
+    NotchBarKiller
+
 # Perf
 PRODUCT_PACKAGES += \
     libqti-perfd-client
