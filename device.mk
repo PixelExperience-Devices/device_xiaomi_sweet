@@ -11,6 +11,9 @@ PRODUCT_SOONG_NAMESPACES += \
 # Product launched with 11.0
 PRODUCT_SHIPPING_API_LEVEL := 30
 
+# Enable updating of APEXes
+$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+
 # AAPT
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
