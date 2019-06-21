@@ -11,6 +11,9 @@ PRODUCT_SOONG_NAMESPACES += \
 # Product launched with 11.0
 PRODUCT_SHIPPING_API_LEVEL := 30
 
+# Don't build super.img.
+PRODUCT_BUILD_SUPER_PARTITION := false
+
 # Enable Dynamic Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
