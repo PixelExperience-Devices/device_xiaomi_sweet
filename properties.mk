@@ -254,6 +254,10 @@ ro.netflix.bsp_rev=Q6150-17263-1
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.vendor.data.iwlan.enable=true
 
+# Perf
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.vendor.extension_library=libqti-perfd-client.so
+
 # Radio/RIL
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.radio.multisim.config=dsds \
