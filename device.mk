@@ -16,6 +16,10 @@ PRODUCT_PACKAGES += \
     fs_config_dirs \
     fs_config_files
 
+# Fastbootd
+PRODUCT_PACKAGES += \
+    fastbootd
+
 # Overlays
 PRODUCT_PACKAGES += \
     CarrierConfigResSweet \
