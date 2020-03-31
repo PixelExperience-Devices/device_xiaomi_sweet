@@ -2,6 +2,10 @@
   *;
 }
 
+-keep class org.lineageos.settings.display.* {
+  *;
+}
+
 -keep class org.lineageos.settings.doze.* {
   *;
 }
