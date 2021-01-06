@@ -439,6 +439,11 @@ on post-fs-data
     #Create dir for dolby
     mkdir /data/vendor/dolby 0770 media media
 
+    start vendor.qcrild
+    start vendor.qcrild2
+    start vendor.dataqti
+    start vendor.dataadpl
+
 service nqnfcinfo /system/vendor/bin/nqnfcinfo
     class late_start
     group nfc
