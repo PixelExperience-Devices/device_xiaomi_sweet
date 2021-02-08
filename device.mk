@@ -11,5 +11,8 @@ PRODUCT_SOONG_NAMESPACES += \
 # Product launched with 11.0
 PRODUCT_SHIPPING_API_LEVEL := 30
 
+# Enable Dynamic Partitions
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
 # Inherit vendor
 $(call inherit-product, vendor/xiaomi/sweet/sweet-vendor.mk)
