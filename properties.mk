@@ -198,6 +198,10 @@ persist.sys.sf.color_mode=9
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.frp.pst=/dev/block/bootdevice/by-name/frp
 
+# Fuse
+PRODUCT_PRODUCT_PROPERTIES += \
+persist.sys.fuse.passthrough.enable=true
+
 # Fwk detect
 PRODUCT_ODM_PROPERTIES += \
 ro.vendor.qti.va_odm.support=1
