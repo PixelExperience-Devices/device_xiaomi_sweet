@@ -118,6 +118,7 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 ENABLE_VENDOR_RIL_SERVICE := true
 
 # Sepolicy
+BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 TARGET_SEPOLICY_DIR := msmsteppe
 -include device/qcom/sepolicy_vndr/SEPolicy.mk
 
