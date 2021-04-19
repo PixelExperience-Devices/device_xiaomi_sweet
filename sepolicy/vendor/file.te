@@ -4,5 +4,8 @@ type sysfs_re25_calib, fs_type, sysfs_type;
 # Fingerprint
 type fingerprint_data_file, data_file_type, file_type;
 
+# Power
+type proc_sched_energy_aware, proc_type, fs_type;
+
 # Proximity
 type sysfs_iio_devices, fs_type, sysfs_type;
