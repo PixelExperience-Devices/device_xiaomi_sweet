@@ -1,0 +1,18 @@
+//
+// Copyright (C) 2021 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+cc_library_static {
+    name: "libinit_sweet",
+    srcs: [
+        "libinit_sweet.cpp",
+        "libinit_variant.cpp",
+        "libinit_utils.cpp"
+    ],
+    export_include_dirs: ["include"],
+    include_dirs: ["system/core/init"],
+    whole_static_libs: ["libbase"],
+    recovery_available: true
+}
