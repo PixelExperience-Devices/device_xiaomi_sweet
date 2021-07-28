@@ -7,6 +7,7 @@
 cc_library_static {
     name: "libinit_sweet",
     srcs: [
+        "libinit_dalvik_heap.cpp",
         "libinit_sweet.cpp",
         "libinit_variant.cpp",
         "libinit_utils.cpp"
