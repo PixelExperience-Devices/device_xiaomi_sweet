@@ -14,6 +14,10 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/audio/,$(TARGET_COPY_OUT_VENDOR)/etc)
 
+# Display
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/display/,$(TARGET_COPY_OUT_VENDOR)/etc)
+
 # Partitions
 PRODUCT_BUILD_SUPER_PARTITION := false
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
