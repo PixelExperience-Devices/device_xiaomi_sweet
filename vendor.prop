@@ -5,6 +5,7 @@ ro.vendor.audio.sdk.fluencetype=fluence
 vendor.audio.adm.buffering.ms=6
 ro.vendor.audio.us.type=mius
 vendor.voice.path.for.pcm.voip=false
+persist.vendor.audio.voicecall.speaker.stereo=true
 
 # Display
 ro.vendor.display.ad=1
