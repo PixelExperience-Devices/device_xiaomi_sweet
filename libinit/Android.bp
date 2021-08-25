@@ -5,8 +5,9 @@
 //
 
 cc_library_static {
-    name: "libinit_sweet",
-    defaults: ["//device/xiaomi/sm6150-common:libinit_sm6150_defaults"],
-    srcs: ["init_sweet.cpp"],
-    whole_static_libs: ["//device/xiaomi/sm6150-common:libinit_sm6150"],
+    name: "init_xiaomi_sweet",
+    srcs: ["init_xiaomi_sweet.cpp"],
+    whole_static_libs: ["//device/xiaomi/sm6150-common:libinit_xiaomi_sm6150"],
+    include_dirs: ["system/core/init"],
+    recovery_available: true,
 }
