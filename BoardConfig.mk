@@ -91,5 +91,9 @@ TARGET_BOARD_PLATFORM := sm6150
 # Recovery
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 
+# Sepolicy
+TARGET_SEPOLICY_DIR := msmsteppe
+-include device/qcom/sepolicy_vndr/SEPolicy.mk
+
 # inherit from the proprietary version
 -include vendor/xiaomi/sweet/BoardConfigVendor.mk
