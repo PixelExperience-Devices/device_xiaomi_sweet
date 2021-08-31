@@ -21,5 +21,8 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := generic
 TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a76
 
+# Bootloader
+TARGET_NO_BOOTLOADER := true
+
 # inherit from the proprietary version
 -include vendor/xiaomi/sweet/BoardConfigVendor.mk
