@@ -88,5 +88,8 @@ TARGET_COPY_OUT_VENDOR := vendor
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_BOARD_PLATFORM := sm6150
 
+# Recovery
+TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
+
 # inherit from the proprietary version
 -include vendor/xiaomi/sweet/BoardConfigVendor.mk
