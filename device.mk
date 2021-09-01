@@ -11,6 +11,13 @@ PRODUCT_SOONG_NAMESPACES += \
 # Product launched with 11.0
 PRODUCT_SHIPPING_API_LEVEL := 30
 
+# Ramdisk
+PRODUCT_PACKAGES += \
+    fstab.qcom
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom
+
 # Don't build super.img.
 PRODUCT_BUILD_SUPER_PARTITION := false
 
