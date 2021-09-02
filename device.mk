@@ -11,6 +11,11 @@ PRODUCT_SOONG_NAMESPACES += \
 # Product launched with 11.0
 PRODUCT_SHIPPING_API_LEVEL := 30
 
+# Overlays
+PRODUCT_PACKAGES += \
+    FrameworksResSweet \
+    SystemUIResSweet
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom
