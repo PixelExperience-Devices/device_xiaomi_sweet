@@ -13,6 +13,7 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 
 # Overlays
 PRODUCT_PACKAGES += \
+    CarrierConfigResSweet \
     FrameworksResSweet \
     SystemUIResSweet
 
