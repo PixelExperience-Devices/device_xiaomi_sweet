@@ -27,8 +27,15 @@
 #
 #
 
+import /vendor/etc/init/init.batterysecret.rc
+import /vendor/etc/init/init.batteryd.rc
+import /vendor/etc/init/init.charge_logger.rc
+import /vendor/etc/init/init.mishow.ctl.rc
+import /vendor/etc/init/init.mi_thermald.rc
+import /vendor/etc/init/init.factory.rc
+import /vendor/etc/init/hw/init.sweet.rc
 on early-init
-    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules audio_wglink audio_q6_pdr audio_q6_notifier audio_snd_event audio_apr audio_adsp_loader audio_q6 audio_native audio_usf audio_pinctrl_wcd audio_pinctrl_lpi audio_swr audio_platform audio_hdmi audio_wcd_spi audio_stub audio_wcd_core audio_wsa881x audio_hdmi audio_bolero_cdc audio_wsa_macro audio_va_macro audio_rx_macro audio_tx_macro audio_machine_talos audio_wcd937x audio_wcd937x_slave
+    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules audio_wglink audio_q6_pdr audio_q6_notifier audio_snd_event audio_apr audio_adsp_loader audio_q6 audio_native audio_usf audio_pinctrl_wcd audio_pinctrl_lpi audio_swr audio_platform audio_hdmi audio_wcd_spi audio_stub audio_wcd_core audio_wsa881x audio_hdmi audio_bolero_cdc audio_wsa_macro audio_va_macro audio_rx_macro audio_tx_macro audio_machine_talos audio_wcd937x audio_wcd937x_slave audio_tfa98xx audio_aw882xx
     write /proc/sys/kernel/sched_boost 1
     mkdir /dsp 0771 media media
     mkdir /firmware 0771 system system
@@ -56,6 +63,29 @@ on fs
     chmod 0771 /mnt/vendor/persist
     restorecon_recursive /mnt/vendor/persist
     mkdir /mnt/vendor/persist/data 0700 system system
+    mkdir /mnt/vendor/persist/haptics 0755 system system
+    mkdir /mnt/vendor/persist/subsys 0770 root system
+    mkdir /dev/logfs 0771 system system
+    mkdir /mnt/vendor/persist/audio 0755 system system
+    #+ add for watermark
+    mkdir /mnt/vendor/persist/camera 0777 root root
+    mount vfat /dev/block/bootdevice/by-name/logfs /dev/logfs noatime umask=006,uid=1000,gid=1000
+    chown system system /sys/class/smartpa/re25_calib
+    chown system system /dev/tfa_reg
+    chown system system /dev/tfa_rw
+    chown system system /dev/tfa_rpc
+    chown system system /dev/tfa_control
+    chmod 0666 /sys/class/smartpa/re25_calib
+    chmod 0660 /dev/tfa_reg
+    chmod 0660 /dev/tfa_rw
+    chmod 0660 /dev/tfa_rpc
+    chmod 0660 /dev/tfa_control
+    chmod 644 /persist/audio/us_manual_cal
+
+    chown system system /sys/class/hphlr_impedance/hphl
+    chown system system /sys/class/hphlr_impedance/hphr
+    chmod 0440 /sys/class/hphlr_impedance/hphl
+    chmod 0440 /sys/class/hphlr_impedance/hphr
 
 on post-fs
     # set RLIMIT_MEMLOCK to 64MB
@@ -78,14 +108,34 @@ on post-fs-data
     mkdir /tombstones/lpass 0771 system system
     mkdir /tombstones/wcnss 0771 system system
     mkdir /tombstones/dsps 0771 system system
+    mkdir /data/vendor/nfc 0770 nfc nfc
     mkdir /data/vendor/hbtp 0750 system system
     mkdir /persist/qti_fp 0700 system system
     mkdir /data/vendor/nnhal 0700 system system
+    mkdir /data/vendor/thermal 0771 root system
+    mkdir /data/vendor/thermal/config 0771 root system
+    chown system system /sys/class/drm/card0-DSI-1/dim_alpha
+    chown system system /sys/class/drm/card0-DSI-1/fod_ui_ready
+    chown system system /sys/class/drm/card0-DSI-1/dim_layer_enable
+    chown system system /sys/class/drm/card0-DSI-1/wp_info
+    chmod 0644 /sys/class/drm/card0-DSI-1/wp_info
+    chown system system /mnt/vendor/persist/display
+
+on property:ro.boot.dp=0x0 && property:ro.boot.secureboot=1
+    write /sys/bus/platform/devices/c440000.qcom,spmi:qcom,pm6150@0:qcom,power-on@800/pshold_reboot 7
 
 # For cpusets initialize for Silver Only first and then Silver + Gold
 # Silver Only configuration cannot work with 0-7
 on boot
     chown system system /sys/kernel/hbtp/display_pwr
+    chown system system /proc/tp_selftest
+    chmod 0664 /proc/tp_selftest
+    chown system system /sys/class/touch/touch_dev/palm_sensor
+    chown system system /sys/class/leds/softlight_torch_0/brightness
+    chown system system /sys/class/leds/softlight_torch_1/brightness
+    chown system system /sys/class/drm/card0-DSI-1/doze_backlight
+    chown system system /sys/class/drm/card0-DSI-1/dynamic_fps
+    chmod 0444 /sys/class/drm/card0-DSI-1/dynamic_fps
     start rmt_storage
     start rfs_access
     write /dev/cpuset/top-app/cpus 0-3
@@ -98,6 +148,10 @@ on boot
     write /dev/cpuset/foreground/boost/cpus 0-7
     write /dev/cpuset/background/cpus 0-7
     write /dev/cpuset/system-background/cpus 0-7
+    chown system system /sys/class/thermal/thermal_message/sconfig
+#disable qcom qc3p5
+    setprop persist.vendor.cp.support_qc3p5 0
+    write /sys/block/sda/queue/wbt_lat_usec 75000
 
 # Add a cpuset for the camera daemon
 # We want all cores for camera
@@ -108,6 +162,21 @@ on boot
     chown cameraserver cameraserver /dev/cpuset/camera-daemon/tasks
     chmod 0660 /dev/cpuset/camera-daemon/tasks
 
+#palm_sensor
+    chown system system /sys/class/touch/touch_dev/palm_sensor
+
+    chown system system /dev/lirc0
+    chmod 0660 /dev/lirc0
+
+#FOD
+    chown system system /sys/class/touch/tp_dev/fod_status
+    chmod 0664 /sys/class/touch/tp_dev/fod_status
+
+#change owner of white led
+    chown system system /sys/class/leds/white/brightness
+    chown system system /sys/class/leds/white/breath
+
+    chown system system /sys/class/backlight/panel0-backlight/brightness_clone
 #Load WLAN driver
     insmod /vendor/lib/modules/qca_cld3_wlan.ko
 
@@ -154,8 +223,16 @@ on property:sys.shutdown.requested=*
     stop vendor.per_proxy
 
 on charger
-    setprop sys.usb.controller a600000.dwc3
+    setprop vendor.usb.controller a600000.dwc3
     setprop sys.usb.configfs 1
+    start vendor.power_off_alarm
+    symlink /dev/block/platform/soc/1da4000.ufshc /dev/block/bootdevice
+    mkdir /mnt/vendor/persist
+    chown root system /mnt/vendor/persist
+    chmod 0771 /mnt/vendor/persist
+    mkdir /mnt/vendor/persist/subsys 0770 root system
+    wait /dev/block/platform/soc/1da4000.ufshc/by-name/persist
+    start leds-sh
 
 ## import cne init file
 #on post-fs
@@ -329,6 +406,11 @@ service vendor.cnss_diag /system/vendor/bin/cnss_diag -q -f -t HELIUM
    group system wifi inet sdcard_rw media_rw diag
    oneshot
 
+service leds-sh /system/vendor/bin/sh /vendor/etc/init.leds.sh
+   class core
+   user root
+   oneshot
+
 service ppd /vendor/bin/mm-pp-dpps
     class late_start
     user system
@@ -363,6 +445,15 @@ on property:init.svc.hwcomposer-2-1=restarting
 #    user system
 #    group system
 
+service panel-info-sh /system/vendor/bin/sh /vendor/etc/init.panel_info.sh
+    class late_start
+    user root
+    oneshot
+    disabled
+
+on property:sys.boot_completed=1
+    start panel-info-sh
+
 service hbtp /system/vendor/bin/hbtp_daemon
      class main
      user system
@@ -379,7 +470,6 @@ service energy-awareness /system/vendor/bin/energy-awareness
     user system
     group system
     oneshot
-
 service dcvs-sh /vendor/bin/init.qti.dcvs.sh
     class late_start
     user root
@@ -390,6 +480,49 @@ service dcvs-sh /vendor/bin/init.qti.dcvs.sh
 on property:vendor.dcvs.prop=1
    start dcvs-sh
 
+on property:vendor.audio.cit.spkcal.copy=true
+    copy /data/vendor/cit/tfa9894_chk.txt /mnt/vendor/persist/audio/tfa9894_chk.txt
+    copy /data/vendor/cit/aw88263_chk.txt /mnt/vendor/persist/audio/aw88263_chk.txt
+    chmod 666 /mnt/vendor/persist/audio/tfa9894_chk.txt
+    chmod 666 /mnt/vendor/persist/audio/aw88263_chk.txt
+service audioshell_service /vendor/bin/audioshell_service
+    oneshot
+    disabled
+
+on property:ro.vendor.miui.region=*
+    start audioshell_service
+service remosaic_daemon /system/vendor/bin/remosaic_daemon
+   class late_start
+   user camera
+   group camera
+
+on post-fs-data
+    chmod 0666 /dev/migt
+    restorecon /dev/migt
+    chmod 0777 /sys/module/migt/parameters/migt_freq
+    restorecon /sys/module/migt/parameters/migt_freq
+    chmod 0777 /sys/module/migt/parameters/migt_ms
+    restorecon /sys/module/migt/parameters/migt_ms
+    chmod 0777 /sys/module/migt/parameters/migt_thresh
+    restorecon /sys/module/migt/parameters/migt_thresh
+
+    chmod 0644 /dev/elliptic0
+    chmod 0644 /dev/elliptic1
+
+service displayfeature /system/bin/displayfeature
+    class late_start
+    user root
+    group root
+
+on property:init.svc.surfaceflinger=stopped
+    stop displayfeature
+
+on property:init.svc.surfaceflinger=running
+    start displayfeature
+
+on property:init.svc.surfaceflinger=restarting
+    stop displayfeature
+
 service vendor.contexthub-hal-1-0 /vendor/bin/hw/android.hardware.contexthub@1.0-service
     override
     class hal
@@ -397,3 +530,29 @@ service vendor.contexthub-hal-1-0 /vendor/bin/hw/android.hardware.contexthub@1.0
     user system
     group system
     disabled
+
+on property:vendor.bluetooth.startwdsdaemon=true
+    start vendor.bt_wdsdaemon
+
+on property:vendor.bluetooth.startwdsdaemon=false
+    stop vendor.bt_wdsdaemon
+
+service vendor.bt_wdsdaemon /system/vendor/bin/wdsdaemon -su
+    class late_start
+    user root
+    group bluetooth diag system wakelock
+    disabled
+    oneshot
+
+# for gts test
+on property:persist.sys.miui_optimization=false
+    write /dev/stune/top-app/schedtune.prefer_idle 1
+    write /dev/stune/top-app/schedtune.boost 20
+
+on property:persist.sys.miui_optimization=true
+    write /dev/stune/top-app/schedtune.prefer_idle 0
+    write /dev/stune/top-app/schedtune.boost 0
+
+# Sync attribute value between system and vendor
+on property:persist.sys.mcc.mnc=*
+    setprop persist.vendor.mcc.mnc ${persist.sys.mcc.mnc}

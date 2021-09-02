@@ -992,6 +992,15 @@ else
 
             vmpres_file_min=$((minfree_5 + (minfree_5 - rem_minfree_4)))
             echo $vmpres_file_min > /sys/module/lowmemorykiller/parameters/vmpressure_file_min
+            if [ $MemTotal -lt 3145728 ]; then
+                echo "18432,23040,27648,32256,100640,120640" > /sys/module/lowmemorykiller/parameters/minfree
+            elif [ $MemTotal -lt 4194304 ]; then
+                echo "18432,23040,27648,38708,120640,144768" > /sys/module/lowmemorykiller/parameters/minfree
+            elif [ $MemTotal -lt 6291456 ]; then
+                echo "18432,23040,27648,64512,165888,225792" > /sys/module/lowmemorykiller/parameters/minfree
+            else
+                echo "18432,23040,27648,96768,276480,362880" > /sys/module/lowmemorykiller/parameters/minfree
+            fi
         else
             # Set LMK series, vmpressure_file_min for 32 bit non-go targets.
             # Disable Core Control, enable KLMK for non-go 8909.
@@ -1031,7 +1040,7 @@ else
               *)
                 #Set PPR parameters for all other targets.
                 echo $set_almk_ppr_adj > /sys/module/process_reclaim/parameters/min_score_adj
-                echo 1 > /sys/module/process_reclaim/parameters/enable_process_reclaim
+                echo 0 > /sys/module/process_reclaim/parameters/enable_process_reclaim
                 echo 50 > /sys/module/process_reclaim/parameters/pressure_min
                 echo 70 > /sys/module/process_reclaim/parameters/pressure_max
                 echo 30 > /sys/module/process_reclaim/parameters/swap_opt_eff
@@ -1058,7 +1067,7 @@ else
 
     # Disable wsf for all targets beacause we are using efk.
     # wsf Range : 1..1000 So set to bare minimum value 1.
-    echo 1 > /proc/sys/vm/watermark_scale_factor
+    echo 10 > /proc/sys/vm/watermark_scale_factor
 
     configure_zram_parameters
 
@@ -1087,10 +1096,10 @@ function enable_memory_features()
 function start_hbtp()
 {
         # Start the Host based Touch processing but not in the power off mode.
-        bootmode=`getprop ro.bootmode`
-        if [ "charger" != $bootmode ]; then
-                start vendor.hbtp
-        fi
+        #bootmode=`getprop ro.bootmode`
+        #if [ "charger" != $bootmode ]; then
+        #        start vendor.hbtp
+        #fi
 }
 
 case "$target" in
@@ -3372,8 +3381,10 @@ case "$target" in
       echo -6 >  /sys/devices/system/cpu/cpu7/sched_load_boost
       echo 85 > /sys/devices/system/cpu/cpu6/cpufreq/schedutil/hispeed_load
 
-      echo "0:1209600" > /sys/module/cpu_boost/parameters/input_boost_freq
-      echo 40 > /sys/module/cpu_boost/parameters/input_boost_ms
+      echo "0:1324800" > /sys/module/cpu_boost/parameters/input_boost_freq
+      echo 120 > /sys/module/cpu_boost/parameters/input_boost_ms
+      echo "0:0 1:0 2:0 3:0 4:1804800 5:0 6:0 7:2208000" > /sys/module/cpu_boost/parameters/powerkey_input_boost_freq
+      echo 400 > /sys/module/cpu_boost/parameters/powerkey_input_boost_ms
 
       # Set Memory parameters
       configure_memory_parameters
@@ -3430,8 +3441,11 @@ case "$target" in
             echo N > /sys/module/lpm_levels/L3/cpu7/ret/idle_enabled
 
             # cpuset parameters
-            echo 0-5 > /dev/cpuset/background/cpus
-            echo 0-5 > /dev/cpuset/system-background/cpus
+            echo 0-2     > /dev/cpuset/background/cpus
+            echo 0-3     > /dev/cpuset/system-background/cpus
+            echo 4-7     > /dev/cpuset/foreground/boost/cpus
+            echo 0-2,4-7 > /dev/cpuset/foreground/cpus
+            echo 0-7     > /dev/cpuset/top-app/cpus
 
             # Turn off scheduler boost at the end
             echo 0 > /proc/sys/kernel/sched_boost
@@ -3734,8 +3748,10 @@ case "$target" in
             echo -6 >  /sys/devices/system/cpu/cpu7/sched_load_boost
             echo 85 > /sys/devices/system/cpu/cpu6/cpufreq/schedutil/hispeed_load
 
-            echo "0:1248000" > /sys/module/cpu_boost/parameters/input_boost_freq
-            echo 40 > /sys/module/cpu_boost/parameters/input_boost_ms
+            echo "0:1324800" > /sys/module/cpu_boost/parameters/input_boost_freq
+            echo 120 > /sys/module/cpu_boost/parameters/input_boost_ms
+            echo "0:1324800 1:0 2:0 3:0 4:0 5:0 6:2169600 7:0" > /sys/module/cpu_boost/parameters/powerkey_input_boost_freq
+            echo 400 > /sys/module/cpu_boost/parameters/powerkey_input_boost_ms
 
             # Set Memory parameters
             configure_memory_parameters
@@ -3796,14 +3812,17 @@ case "$target" in
             setprop vendor.dcvs.prop 1
 
             # cpuset parameters
-                echo 0-5 > /dev/cpuset/background/cpus
-                echo 0-5 > /dev/cpuset/system-background/cpus
+            echo 0-2     > /dev/cpuset/background/cpus
+            echo 0-3     > /dev/cpuset/system-background/cpus
+            echo 4-7     > /dev/cpuset/foreground/boost/cpus
+            echo 0-2,4-7 > /dev/cpuset/foreground/cpus
+            echo 0-7     > /dev/cpuset/top-app/cpus
 
-                # Turn off scheduler boost at the end
-                echo 0 > /proc/sys/kernel/sched_boost
+            # Turn off scheduler boost at the end
+            echo 0 > /proc/sys/kernel/sched_boost
 
-                # Turn on sleep modes.
-                echo 0 > /sys/module/lpm_levels/parameters/sleep_disabled
+            # Turn on sleep modes.
+            echo 0 > /sys/module/lpm_levels/parameters/sleep_disabled
           ;;
         esac
 
@@ -3885,8 +3904,13 @@ case "$target" in
         # Enable conservative pl
         echo 1 > /proc/sys/kernel/sched_conservative_pl
 
-        echo "0:1228800" > /sys/devices/system/cpu/cpu_boost/input_boost_freq
+        # enable input boost
+        echo 1 > /sys/devices/system/cpu/cpu_boost/sched_boost_on_input
+        echo "0:1516800" > /sys/devices/system/cpu/cpu_boost/input_boost_freq
         echo 120 > /sys/devices/system/cpu/cpu_boost/input_boost_ms
+        echo 1 > /sys/devices/system/cpu/cpu_boost/sched_boost_on_powerkey_input
+        echo "0:1804800 1:0 2:0 3:0 4:0 5:0 6:2208000 7:2400000" > /sys/devices/system/cpu/cpu_boost/powerkey_input_boost_freq
+        echo 400 > /sys/devices/system/cpu/cpu_boost/powerkey_input_boost_ms
 
         # Set Memory parameters
         configure_memory_parameters
@@ -5261,8 +5285,11 @@ case "$target" in
 	echo 1 > /proc/sys/kernel/sched_walt_rotate_big_tasks
 
 	# cpuset parameters
-	echo 0-3 > /dev/cpuset/background/cpus
-	echo 0-3 > /dev/cpuset/system-background/cpus
+	echo 0-2     > /dev/cpuset/background/cpus
+	echo 0-3     > /dev/cpuset/system-background/cpus
+	echo 4-7     > /dev/cpuset/foreground/boost/cpus
+	echo 0-2,4-7 > /dev/cpuset/foreground/cpus
+	echo 0-7     > /dev/cpuset/top-app/cpus
 
 	# Turn off scheduler boost at the end
 	echo 0 > /proc/sys/kernel/sched_boost
@@ -5296,9 +5323,6 @@ case "$target" in
 	# Disable wsf, beacause we are using efk.
 	# wsf Range : 1..1000 So set to bare minimum value 1.
         echo 1 > /proc/sys/vm/watermark_scale_factor
-
-        echo 0-3 > /dev/cpuset/background/cpus
-        echo 0-3 > /dev/cpuset/system-background/cpus
 
         # Enable oom_reaper
 	if [ -f /sys/module/lowmemorykiller/parameters/oom_reaper ]; then
