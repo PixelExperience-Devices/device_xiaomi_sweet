@@ -15,7 +15,8 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 PRODUCT_PACKAGES += \
     CarrierConfigResSweet \
     FrameworksResSweet \
-    SystemUIResSweet
+    SystemUIResSweet \
+    TelephonyResSweet
 
 # Ramdisk
 PRODUCT_PACKAGES += \
