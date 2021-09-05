@@ -11,6 +11,11 @@ PRODUCT_SOONG_NAMESPACES += \
 # Product launched with 11.0
 PRODUCT_SHIPPING_API_LEVEL := 30
 
+# AID/fs configs
+PRODUCT_PACKAGES += \
+    fs_config_dirs \
+    fs_config_files
+
 # Overlays
 PRODUCT_PACKAGES += \
     CarrierConfigResSweet \

@@ -24,6 +24,9 @@ TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a76
 # Bootloader
 TARGET_NO_BOOTLOADER := true
 
+# Filesystem
+TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
+
 # Kernel
 BOARD_KERNEL_CMDLINE += console=ttyMSM0,115200n8 androidboot.console=ttyMSM0
 BOARD_KERNEL_CMDLINE += androidboot.hardware=qcom
