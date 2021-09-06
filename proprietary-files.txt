@@ -518,6 +518,11 @@ vendor/lib/libstagefright_soft_ddpdec.so
 vendor/lib/vndk/libstagefright_foundation.so
 vendor/lib/vndk/libstagefright_omx.so
 
+# NFC
+vendor/etc/libnfc-nci.conf
+vendor/etc/libnfc-nxp.conf
+vendor/lib/libpn553_fw.so
+
 # Sensors
 vendor/bin/sensors.qti
 vendor/etc/init/init.vendor.sensors.rc
