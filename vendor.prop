@@ -2,7 +2,6 @@
 persist.vendor.audio.hifi=false
 persist.vendor.audio.ring.filter.mask=0
 ro.vendor.audio.sdk.fluencetype=fluence
-vendor.audio.adm.buffering.ms=6
 ro.vendor.audio.us.type=mius
 vendor.voice.path.for.pcm.voip=false
 persist.vendor.audio.voicecall.speaker.stereo=true
