@@ -16,6 +16,10 @@ PRODUCT_PACKAGES += \
     fs_config_dirs \
     fs_config_files
 
+# ANT+
+PRODUCT_PACKAGES += \
+    com.dsi.ant@1.0.vendor
+
 # Bluetooth
 PRODUCT_PACKAGES += \
     audio.bluetooth.default \
