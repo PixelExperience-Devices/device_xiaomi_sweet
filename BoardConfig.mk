@@ -24,6 +24,14 @@ TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a76
 # Bootloader
 TARGET_NO_BOOTLOADER := true
 
+# Display
+TARGET_USES_DISPLAY_RENDER_INTENTS := true
+
+# Graphics
+TARGET_USES_GRALLOC4 := true
+TARGET_USES_HWC2 := true
+TARGET_USES_ION := true
+
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
