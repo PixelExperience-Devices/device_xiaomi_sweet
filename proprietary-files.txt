@@ -55,6 +55,8 @@ vendor/lib/libsurround_3mic_proc.so
 # Audio HAL
 vendor/lib/hw/audio.primary.sm6150.so
 vendor/lib/libaudio_log_utils.so
+vendor/lib64/hw/audio.primary.sm6150.so
+vendor/lib64/libaudio_log_utils.so
 
 # Audio FX modules
 vendor/lib/soundfx/libhwdap.so
