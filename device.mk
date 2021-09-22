@@ -43,6 +43,9 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-service_64 \
     android.hardware.camera.provider@2.6:64
 
+PRODUCT_PACKAGES += \
+    libdng_sdk.vendor:64
+
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \
     frameworks/native/data/etc/android.hardware.camera.front.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.front.xml \
