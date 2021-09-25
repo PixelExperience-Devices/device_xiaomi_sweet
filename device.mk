@@ -182,6 +182,13 @@ PRODUCT_PACKAGES += \
     TelephonyResSweet \
     WifiResSweet
 
+# Power
+PRODUCT_PACKAGES += \
+    android.hardware.power-service-qti
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \
