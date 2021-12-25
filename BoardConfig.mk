@@ -24,7 +24,7 @@ TARGET_RECOVERY_DEVICE_MODULES := init_xiaomi_sweet
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/xiaomi/sm6150
-TARGET_KERNEL_CONFIG := sweet_user_defconfig
+TARGET_KERNEL_CONFIG := sweet_defconfig
 
 # Properties
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
