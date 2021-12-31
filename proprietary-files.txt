@@ -1,4 +1,4 @@
-# Unpinned blobs from sweet-user 11 RKQ1.200826.002 V12.5.6.0.RKFMIXM release-keys
+# Unpinned blobs from sweet-user 11 RKQ1.200826.002 V12.5.9.0.RKFMIXM release-keys
 
 # ADSP modules
 vendor/lib/rfsa/adsp/capi_v2_aptX_CLHDAD_Encoder.so
