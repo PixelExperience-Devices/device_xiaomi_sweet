@@ -292,29 +292,6 @@
          -->
     <string name="config_mainBuiltInDisplayCutout">M 0,0 H -37 V 93 H 37 V 0 H 0 Z</string>
 
-    <!-- True if the display hardware only has brightness buckets rather than a full range of
-         backlight values -->
-    <bool name="config_displayBrightnessBucketsInDoze">true</bool>
-
-    <!-- Vibrator pattern for feedback about a long screen/key press -->
-    <integer-array name="config_longPressVibePattern">
-        <item>0</item>
-        <item>12</item>
-        <item>7</item>
-    </integer-array>
-
-    <!-- Vibrator pattern for feedback about touching a virtual key -->
-    <integer-array name="config_virtualKeyVibePattern">
-        <item>0</item>
-        <item>12</item>
-        <item>7</item>
-    </integer-array>
-
-    <!-- Vibrator pattern for a very short but reliable vibration for soft keyboard tap -->
-    <integer-array name="config_keyboardTapVibePattern">
-        <item>10</item>
-    </integer-array>
-
     <!-- The display uses different gamma curves for different refresh rates. It's hard for panel
          vendor to tune the curves to have exact same brightness for different refresh rate. So
          flicker could be observed at switch time. The issue is worse at the gamma lower end.
