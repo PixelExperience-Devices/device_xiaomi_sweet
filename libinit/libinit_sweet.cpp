@@ -17,7 +17,7 @@ static const variant_info_t sweet_global_info = {
     .device = "sweet",
     .marketname = "Redmi Note 10 Pro",
     .model = "M2101K6G",
-    .build_fingerprint = "Redmi/sweet_global/sweet:11/RKQ1.200826.002/V12.5.4.0.RKFMIXM:user/release-keys",
+    .build_fingerprint = "Redmi/sweet_global/sweet:11/RKQ1.200826.002/V12.5.9.0.RKFMIXM:user/release-keys",
 
     .nfc = true,
 };
