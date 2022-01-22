@@ -14,10 +14,6 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/audio/,$(TARGET_COPY_OUT_VENDOR)/etc)
 
-# Cutout Ring
-PRODUCT_PACKAGES += \
-    CutoutRingServiceSweet
-
 # Display
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/display/,$(TARGET_COPY_OUT_VENDOR)/etc)
