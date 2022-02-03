@@ -52,11 +52,11 @@ vendor/lib/libspkrprot.so
 vendor/lib/libssrec.so
 vendor/lib/libsurround_3mic_proc.so
 
-# Audio HAL
-vendor/lib/hw/audio.primary.sm6150.so
-vendor/lib/libaudio_log_utils.so
-vendor/lib64/hw/audio.primary.sm6150.so
-vendor/lib64/libaudio_log_utils.so
+# Audio HAL - from sweet-user 11 RKQ1.200826.002 V12.5.9.0.RKFMIXM release-keys
+vendor/lib/hw/audio.primary.sm6150.so|2ae8153e03bd9ca87f9a6a6bff59f9f5ed52a01f
+vendor/lib/libaudio_log_utils.so|71ec4d31ad6c9e9a4bee8db7b5ab55b70ef7c4c3
+vendor/lib64/hw/audio.primary.sm6150.so|8bfea371bbddeee21204bd16e7b980225430abb2
+vendor/lib64/libaudio_log_utils.so|6091c30d5724adb31a3b4c71379cc004c235905a
 
 # Audio FX modules
 vendor/lib/soundfx/libhwdap.so
