@@ -425,3 +425,6 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Inherit vendor
 $(call inherit-product, vendor/xiaomi/sweet/sweet-vendor.mk)
+
+# Inherit MIUI Camera
+$(call inherit-product-if-exists, vendor/xiaomi/sweet-miuicamera/products/miuicamera.mk)
