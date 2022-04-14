@@ -4,7 +4,6 @@
 -vendor/lib/rfsa/adsp/capi_v2_aptX_CLHDAD_Encoder.so
 -vendor/lib/rfsa/adsp/capi_v2_aptX_Classic.so
 -vendor/lib/rfsa/adsp/capi_v2_aptX_HD.so
--vendor/lib/rfsa/adsp/capi_v2_dap_cpdp.so
 vendor/lib/rfsa/adsp/dirac_resource.dar
 -vendor/lib/rfsa/adsp/libdirac-capiv2.so
 -vendor/lib/rfsa/adsp/libmialgo_rfs_cdsp_skel.so
@@ -57,11 +56,6 @@ vendor/etc/acdbdata/adsp_avs_config.acdb|d1138e8fb3ebbee65bd09891352eebb8bbc3d6f
 -vendor/lib/libaudio_log_utils.so|71ec4d31ad6c9e9a4bee8db7b5ab55b70ef7c4c3
 -vendor/lib64/hw/audio.primary.sm6150.so|8bfea371bbddeee21204bd16e7b980225430abb2
 -vendor/lib64/libaudio_log_utils.so|6091c30d5724adb31a3b4c71379cc004c235905a
-
-# Audio FX modules
--vendor/lib/soundfx/libhwdap.so
--vendor/lib/soundfx/libswgamedap.so
--vendor/lib/soundfx/libswvqe.so
 
 # Camera
 -vendor/lib64/camera/com.qti.sensor.sweet_gc02m1.so
@@ -347,26 +341,6 @@ vendor/firmware/ipa_fws.b03
 vendor/firmware/ipa_fws.b04
 vendor/firmware/ipa_fws.elf
 vendor/firmware/ipa_fws.mdt
-
-# Media (Dolby)
--vendor/etc/vintf/manifest/manifest_vendor.dolby.hardware.dms.xml
--vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service
-vendor/etc/dolby/dax-default.xml
-vendor/etc/init/vendor.dolby.hardware.dms@2.0-service.rc
--vendor/lib/libdapparamstorage.so
--vendor/lib/vendor.dolby.hardware.dms@2.0.so
--vendor/lib64/libdapparamstorage.so
--vendor/lib64/libdlbdsservice.so
--vendor/lib64/vendor.dolby.hardware.dms@2.0-impl.so
--vendor/lib64/vendor.dolby.hardware.dms@2.0.so
-
-# Media (stagefright)
--vendor/lib/vndk/libstagefright_foundation.so;MODULE=libstagefright_foundation_sweet
--vendor/lib/vndk/libstagefright_omx.so;MODULE=libstagefright_omx_sweet
--vendor/lib/libdeccfg.so
--vendor/lib/libstagefright_soft_ac4dec.so
--vendor/lib/libstagefright_soft_ddpdec.so
--vendor/lib/libstagefrightdolby.so
 
 # NFC
 vendor/etc/libnfc-nci.conf
