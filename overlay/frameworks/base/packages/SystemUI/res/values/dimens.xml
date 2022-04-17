@@ -23,6 +23,12 @@
     <!-- Height of the status bar header bar when on Keyguard (match status_bar_height) -->
     <dimen name="status_bar_header_height_keyguard">@*android:dimen/status_bar_height</dimen>
 
+    <!-- Height of the Ongoing App Ops chip -->
+    <dimen name="ongoing_appops_chip_height">64px</dimen>
+
+    <!--  Total minimum padding to enforce to ensure that the dot can always show  -->
+    <dimen name="ongoing_appops_dot_min_padding">16dp</dimen>
+
     <!-- Location of physical charger port -->
     <dimen name="physical_charger_port_location_normalized_x">0.5</dimen>
     <dimen name="physical_charger_port_location_normalized_y">1</dimen>
