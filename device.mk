@@ -19,8 +19,10 @@ PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/display/,$(TARGET_COPY_OUT_VENDOR)/etc)
 
 # Overlay
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay
+PRODUCT_PACKAGES += \
+    FrameworksSweet \
+    SettingsSweet \
+    SystemUISweet
 
 # Partitions
 PRODUCT_BUILD_SUPER_PARTITION := false

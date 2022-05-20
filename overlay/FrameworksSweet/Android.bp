@@ -1,0 +1,6 @@
+runtime_resource_overlay {
+    name: "FrameworksSweet",
+    theme: "FrameworksSweet",
+    sdk_version: "current",
+    vendor: true,
+}

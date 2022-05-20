@@ -1,0 +1,6 @@
+runtime_resource_overlay {
+    name: "SystemUISweet",
+    theme: "SystemUISweet",
+    sdk_version: "current",
+    vendor: true,
+}
