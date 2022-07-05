@@ -30,7 +30,7 @@ static const variant_info_t sweetin_info = {
     .device = "sweetin",
     .marketname = "Redmi Note 10 Pro",
     .model = "M2101K6P",
-    .build_fingerprint = "Redmi/sweetin/sweetin:11/RKQ1.200826.002/V12.5.10.0.RKFINXM:user/release-keys",
+    .build_fingerprint = "Redmi/sweetin/sweetin:12/RKQ1.210614.002/V13.0.4.0.SKFINXM:user/release-keys",
 
     .nfc = false,
 };
@@ -43,7 +43,7 @@ static const variant_info_t sweetinpro_info = {
     .device = "sweetin",
     .marketname = "Redmi Note 10 Pro Max",
     .model = "M2101K6I",
-    .build_fingerprint = "Redmi/sweetinpro/sweetin:11/RKQ1.200826.002/V12.5.10.0.RKFINXM:user/release-keys",
+    .build_fingerprint = "Redmi/sweetinpro/sweetin:12/RKQ1.210614.002/V13.0.4.0.SKFINXM:user/release-keys",
 
     .nfc = false,
 };
