@@ -536,7 +536,6 @@ vendor/etc/seccomp_policy/vendor.qti.hardware.dsp.policy
 vendor/lib64/vendor.qti.hardware.dsp@1.0.so
 
 # Display (HWC)
-vendor/lib/hw/hwcomposer.sm6150.so
 vendor/lib64/hw/hwcomposer.sm6150.so
 
 # Display Feature
