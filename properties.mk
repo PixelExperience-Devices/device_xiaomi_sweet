@@ -214,6 +214,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 debug.sf.disable_backpressure=1 \
 debug.sf.enable_hwc_vds=1 \
 debug.sf.latch_unsignaled=1 \
+debug.sf.predict_hwc_composition_strategy=0 \
 persist.sys.sf.color_saturation=1.0 \
 ro.hardware.egl=adreno \
 ro.hardware.vulkan=adreno \
