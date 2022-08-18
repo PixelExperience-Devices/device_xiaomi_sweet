@@ -211,6 +211,7 @@ ro.vendor.qti.va_aosp.support=1
 PRODUCT_PROPERTY_OVERRIDES += \
 debug.sf.disable_backpressure=1 \
 debug.sf.enable_hwc_vds=1 \
+debug.sf.enable_transaction_tracing=false \
 debug.sf.latch_unsignaled=1 \
 debug.sf.predict_hwc_composition_strategy=0 \
 persist.sys.sf.color_saturation=1.0 \
