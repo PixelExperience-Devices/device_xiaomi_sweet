@@ -1,0 +1,14 @@
+[
+    {
+        "repository": "kernel_xiaomi_sweet",
+        "target_path": "kernel/xiaomi/sweet",
+        "remote": "pixel-devices",
+        "branch": "thirteen"
+    },
+    {
+        "repository": "vendor_xiaomi_sweet",
+        "target_path": "vendor/xiaomi/sweet",
+        "remote": "pixel-devices-blobs",
+        "branch": "thirteen"
+    }
+]
