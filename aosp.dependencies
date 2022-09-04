@@ -1,0 +1,20 @@
+[
+    {
+        "repository": "kernel_xiaomi_sweet",
+        "target_path": "kernel/xiaomi/sweet",
+        "remote": "pixel-devices",
+        "branch": "fourteen"
+    },
+    {
+        "repository": "vendor_xiaomi_sweet",
+        "target_path": "vendor/xiaomi/sweet",
+        "remote": "pixel-devices-blobs",
+        "branch": "fourteen"
+    },
+    {
+        "repository": "vendor_xiaomi_sweet-miuicamera",
+        "target_path": "vendor/xiaomi/sweet-miuicamera",
+        "remote": "pixel-devices-blobs",
+        "branch": "fourteen"
+    }
+]
