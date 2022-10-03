@@ -9,20 +9,6 @@
 
 #include "vendor_init.h"
 
-static const variant_info_t sweet_global_info = {
-    .hwc_value = "GLOBAL",
-    .sku_value = "",
-
-    .brand = "Redmi",
-    .device = "sweet",
-    .marketname = "Redmi Note 10 Pro",
-    .model = "M2101K6G",
-    .build_fingerprint = "Redmi/sweet_global/sweet:12/RKQ1.210614.002/V13.0.8.0.SKFMIXM:user/release-keys",
-    .build_description = "sweet_global-user 12 SKQ1.210908.001 V13.0.8.0.SKFMIXM release-keys",
-
-    .nfc = true,
-};
-
 static const variant_info_t sweetin_info = {
     .hwc_value = "INDIA",
     .sku_value = "std",
@@ -51,10 +37,24 @@ static const variant_info_t sweetinpro_info = {
     .nfc = false,
 };
 
+static const variant_info_t sweet_global_info = {
+    .hwc_value = "",
+    .sku_value = "",
+
+    .brand = "Redmi",
+    .device = "sweet",
+    .marketname = "Redmi Note 10 Pro",
+    .model = "M2101K6G",
+    .build_fingerprint = "Redmi/sweet_global/sweet:12/RKQ1.210614.002/V13.0.8.0.SKFMIXM:user/release-keys",
+    .build_description = "sweet_global-user 12 SKQ1.210908.001 V13.0.8.0.SKFMIXM release-keys",
+
+    .nfc = true,
+};
+
 static const std::vector<variant_info_t> variants = {
-    sweet_global_info,
     sweetin_info,
     sweetinpro_info,
+    sweet_global_info,
 };
 
 void vendor_load_properties() {
