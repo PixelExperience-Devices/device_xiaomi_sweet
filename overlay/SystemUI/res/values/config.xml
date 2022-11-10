@@ -75,4 +75,14 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
     <!--  Flag to turn on the rendering of the above path or not  -->
     <bool name="config_enableDisplayCutoutProtection">true</bool>
+
+    <!-- packages to exclude from camera protection -->
+    <string translatable="false" name="config_cameraProtectionExcludedPackages">co.aospa.sense</string>
+
+    <!-- The properties of the face auth camera -->
+    <integer-array name="config_face_auth_props">
+        <item>540</item> <!-- sensorLocationX -->
+        <item>20</item> <!-- sensorLocationY -->
+        <item>50</item> <!--sensorRadius -->
+    </integer-array>
 </resources>
