@@ -214,6 +214,7 @@ debug.sf.enable_hwc_vds=1 \
 debug.sf.enable_transaction_tracing=false \
 debug.sf.latch_unsignaled=1 \
 debug.sf.predict_hwc_composition_strategy=0 \
+debug.sf.treat_170m_as_sRGB=1 \
 persist.sys.sf.color_saturation=1.0 \
 ro.hardware.egl=adreno \
 ro.hardware.vulkan=adreno \
