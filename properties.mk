@@ -50,7 +50,6 @@ vendor.audio.mic.status=off
 
 # Audio (Bluetooth)
 PRODUCT_PROPERTY_OVERRIDES += \
-persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac \
 persist.bluetooth.a2dp_offload.disabled=false \
 ro.bluetooth.a2dp_offload.supported=true
 
