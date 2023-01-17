@@ -385,8 +385,8 @@ vendor/lib64/camera/components/com.xiaomi.node.misegment.so
 vendor/lib64/camera/components/libdepthmapwrapper.so
 vendor/lib64/camera/components/libmmcamera_cac3.so
 
-# Camera Components - from sweet-user 12 SKQ1.210908.001 V13.0.8.0.SKFMIXM release-keys
-vendor/lib64/camera/com.qti.tuned.sweet_ofilm_s5khm2_wide.bin|85c87788c70367aef48cef96d7817479a26b1a0d
+# Camera Components - from sweet-user 12 SKQ1.210908.001 V13.0.15.0.SKFMIXM release-keys
+vendor/lib64/camera/com.qti.tuned.sweet_ofilm_s5khm2_wide.bin|ab8ef3bfcfe0383d82510512f9615dd6d24710f1
 
 # Camera Configs
 vendor/etc/camera/102_SummerDay.png
@@ -948,7 +948,7 @@ vendor/lib64/vendor.qti.hardware.vpp@1.3.so
 vendor/lib/libmmosal.so
 vendor/lib64/libmmosal.so
 
-# NFC - from sweet-user 12 SKQ1.210908.001 V13.0.8.0.SKFMIXM release-keys
+# NFC - from sweet-user 12 SKQ1.210908.001 V13.0.15.0.SKFMIXM release-keys
 vendor/lib/libpn553_fw.so|ec325ad8028c573638a6f6902c4aec73c4ec00fa
 
 # Neural networks
