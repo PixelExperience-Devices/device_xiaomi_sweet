@@ -211,6 +211,7 @@ ro.vendor.qti.va_aosp.support=1
 
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
+debug.sf.auto_latch_unsignaled=0 \
 debug.sf.disable_backpressure=1 \
 debug.sf.disable_client_composition_cache=1 \
 debug.sf.enable_hwc_vds=1 \
