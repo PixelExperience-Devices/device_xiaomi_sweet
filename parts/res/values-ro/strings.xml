@@ -18,13 +18,6 @@
     <!-- Ambient settings -->
     <string name="ambient_enable">Folosește afișaj ambiental</string>
 
-    <!-- DC Dimming settings -->
-    <string name="dc_dimming_enable_title">Mod Anti-pâlpâire</string>
-    <string name="dc_dimming_enable_summary">DC Dimming reduce oboseala ochilor în condiții de lumină scăzută, dar poate duce la o calitate redusă a imaginii și o producție slabă a culorilor.</string>
-
-    <!-- DC Dimming tile -->
-    <string name="dc_dimming_tile_title">DC Dimming</string>
-
     <!-- Thermal Profiles -->
     <string name="thermal_title">Profiluri termice</string>
     <string name="thermal_summary">Ajustați profilurile termice și ale ecranului tactil pentru fiecare aplicație</string>

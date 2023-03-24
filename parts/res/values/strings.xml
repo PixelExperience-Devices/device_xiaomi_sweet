@@ -18,13 +18,6 @@
     <!-- Ambient settings -->
     <string name="ambient_enable">Use ambient display</string>
 
-    <!-- DC Dimming settings -->
-    <string name="dc_dimming_enable_title">Anti-Flicker Mode</string>
-    <string name="dc_dimming_enable_summary">DC Dimming reduces eye strain in low light conditions but may result in reduced image quality and poor color production.</string>
-
-    <!-- DC Dimming tile -->
-    <string name="dc_dimming_tile_title">DC Dimming</string>
-
     <!-- Thermal Profiles -->
     <string name="thermal_title">Thermal Profiles</string>
     <string name="thermal_summary">Adjust per-app thermal and touchscreen profiles</string>
