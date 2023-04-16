@@ -1,4 +1,4 @@
-# All unpinned blobs below are extracted from miui_SWEETININGlobal_V13.0.10.0.SKFINXM_8af57eaace_12.0
+# All unpinned blobs below are extracted from miui_SWEETININGlobal_V14.0.1.0.TKFINXM_022ce09a45_13.0
 
 # ADSP
 vendor/bin/adsprpcd
@@ -50,48 +50,50 @@ vendor/lib/rfsa/adsp/libdirac-capiv2.so
 # ANT+
 vendor/lib64/hw/com.dsi.ant@1.0-impl.so
 
-# Audio - from sweetin-user 12 SKQ1.210908.001 V13.0.9.0.SKFINXM release-keys
-vendor/lib/liba2dpoffload.so|4480175ddca974bc17378095bef8135e2976cc3f
-vendor/lib/libacdb-fts.so|080910f9b2907d41ef20d1b1a8422c2efd0dba41
-vendor/lib/libacdbloader.so|9896a3371080253058cf537e796663f9a439d1ca
-vendor/lib/libacdbrtac.so|094f5769d7b85117ee7bff08c1cda5b01d8d30fb
-vendor/lib/libadiertac.so|772e74b86729e9c5d8667c8cc9fa5e8883c007f0
-vendor/lib/libadm.so|7a1cfba258a1ca590011c2529f620b2db822acc7
-vendor/lib/libaudcal.so|198a2b38f1b1e2e848305efc705b17e77b94c89c
-vendor/lib/libaudioalsa.so|b1521744832c14b67095209955e5d8a440c491a7
-vendor/lib/libaudioconfigstore.so|c41f6f6aeb488155f7018f44e452b76fc014b72d
-vendor/lib/libaudioparsers.so|68826db8a2cdff81d835ec68573e6df75a7b3304
-vendor/lib/libbatterylistener.so|3e0724379eeef8215027ce32dfd94bdf67cf3745
-vendor/lib/libcirrusspkrprot.so|789015401b024c583ba64cd0dc2f8341e0348721
-vendor/lib/libcomprcapture.so|1d80d60388b465bcd0979fbad007de56db0a3128
-vendor/lib/libdrc.so|b066f176f119847059c5aa148f73e1b042fbeab3
-vendor/lib/libexthwplugin.so|843257b616b1b6d491c82fd17cffb9985e7ea42d
-vendor/lib/libhdmiedid.so|c58f84959b45020993551bc31e74e85abf1ff620
-vendor/lib/libhdmipassthru.so|766bca6d2dead0f3288e08c3ef8a46e2d10a1441
-vendor/lib/libhfp.so|371d50d4645ac48529ae75cea399bef05bfa9985
-vendor/lib/libqtigef.so|ef2f0eefe3b8b5e4d4bc559656de8c58cc461c01
-vendor/lib/libsndmonitor.so|a2dab1ced2c2b0e625c8173cca6aee6660ed2a55
-vendor/lib/libspkrprot.so|79642bc38087c32ec9a3d5cd43b81c3df62013df
-vendor/lib/libssrec.so|1ab926e961f9b046309715f4dcdbb1a1657406f0
-vendor/lib/libsurround_3mic_proc.so|e8e086123e0c1dc17f008f97edb3611cd4c702e1
+# Audio
+vendor/lib/liba2dpoffload.so
+vendor/lib/libacdb-fts.so
+vendor/lib/libacdbloader.so
+vendor/lib/libacdbrtac.so
+vendor/lib/libadiertac.so
+vendor/lib/libadm.so
+vendor/lib/libaudcal.so
+vendor/lib/libaudioalsa.so
+vendor/lib/libaudioconfigstore.so
+vendor/lib/libaudioparsers.so
+vendor/lib/libbatterylistener.so
+vendor/lib/libcirrusspkrprot.so
+vendor/lib/libcomprcapture.so
+vendor/lib/libdrc.so
+vendor/lib/libexthwplugin.so
+vendor/lib/libhdmiedid.so
+vendor/lib/libhdmipassthru.so
+vendor/lib/libhfp.so
+vendor/lib/libqtigef.so
+vendor/lib/libsndmonitor.so
+vendor/lib/libspkrprot.so
+vendor/lib/libssrec.so
+vendor/lib/libsurround_3mic_proc.so
 
 # Audio (FX modules)
 system_ext/etc/permissions/audiosphere.xml
 system_ext/framework/audiosphere.jar
 vendor/lib/soundfx/libasphere.so
-vendor/lib/soundfx/libdirac.so
 vendor/lib/soundfx/libhwdap.so
-vendor/lib/soundfx/libmisoundfx.so
 vendor/lib/soundfx/libshoebox.so
 vendor/lib/soundfx/libswgamedap.so
 vendor/lib/soundfx/libswvqe.so
 vendor/lib/libdapparamstorage.so
 
-# Audio (Hardware) - from sweetin-user 12 SKQ1.210908.001 V13.0.9.0.SKFINXM release-keys
-vendor/lib/hw/audio.primary.sm6150.so|04ee69afccbc9e445fbed47f4e21e5a7969b0cb1
-vendor/lib/vndk/libxlog.so|bdb3d8d8b37bd4e1e84f59d912457690e7388f2e
-vendor/lib/libaudio_log_utils.so|007f0e1136d3ca422c9b6c59f7fbcc4588394d87
-vendor/lib/libaudioroute_ext.so|e4083b361cd3047544f412ae972242d8c6f04597
+# Audio (FX modules) - from sweetin-user 12 SKQ1.210908.001 V13.0.10.0.SKFINXM release-keys
+vendor/lib/soundfx/libdirac.so|da2c2c47da3e729dc94038cd2953e620499b1fad
+vendor/lib/soundfx/libmisoundfx.so|fde0519727e01c38296e4b938714f8501afc629b
+
+# Audio (Hardware)
+vendor/lib/hw/audio.primary.sm6150.so
+vendor/lib/vndk/libxlog.so
+vendor/lib/libaudio_log_utils.so
+vendor/lib/libaudioroute_ext.so
 
 # Audio (ACDB)
 vendor/etc/acdbdata/Forte/Forte_Bluetooth_cal.acdb
