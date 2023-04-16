@@ -1,8 +1,7 @@
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
 aaudio.hw_burst_min_usec=2000 \
-aaudio.mmap_exclusive_policy=1 \
-aaudio.mmap_policy=1 \
+aaudio.mmap_exclusive_policy=2 \
 af.fast_track_multiplier=1 \
 audio.deep_buffer.media=true \
 audio.offload.min.duration.secs=30 \
@@ -344,16 +343,6 @@ ro.surface_flinger.max_frame_buffer_acquired_buffers=3 \
 ro.surface_flinger.max_virtual_display_dimension=4096 \
 ro.surface_flinger.protected_contents=true \
 ro.surface_flinger.wcg_composition_dataspace=143261696
-
-# Surfaceflinger
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-debug.sf.use_phase_offsets_as_durations=1 \
-debug.sf.late.sf.duration=15666666 \
-debug.sf.late.app.duration=16666666 \
-debug.sf.early.sf.duration=15666666 \
-debug.sf.early.app.duration=16666666 \
-debug.sf.earlyGl.sf.duration=15666666 \
-debug.sf.earlyGl.app.duration=16666666
 
 # System
 PRODUCT_PROPERTY_OVERRIDES += \
