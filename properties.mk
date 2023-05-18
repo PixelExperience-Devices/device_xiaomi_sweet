@@ -181,6 +181,10 @@ dalvik.vm.systemuicompilerfilter=speed
 PRODUCT_SYSTEM_PROPERTIES += \
 arm64.memtag.process.system_server=off
 
+# Display
+PRODUCT_VENDOR_PROPERTIES += \
+vendor.display.override_doze_mode=1
+
 # Display (AD)
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.vendor.display.ad=1 \
