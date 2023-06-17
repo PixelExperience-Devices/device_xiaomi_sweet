@@ -26,9 +26,11 @@ import android.util.Log;
 import androidx.annotation.Nullable;
 
 import org.lineageos.settings.dirac.DiracActivity;
+import org.lineageos.settings.display.DcDimmingSettingsActivity;
 
 public class TileEntryActivity extends Activity {
     private static final String TAG = "TileEntryActivity";
+    private static final String DC_DIMMING_TILE = "org.lineageos.settings.display.DcDimmingTileService";
     private static final String DIRAC_TILE = "org.lineageos.settings.dirac.DiracTileService";
 
     @Override
@@ -36,6 +38,9 @@ public class TileEntryActivity extends Activity {
         super.onCreate(savedInstanceState);
         ComponentName sourceClass = getIntent().getParcelableExtra(Intent.EXTRA_COMPONENT_NAME);
         switch (sourceClass.getClassName()) {
+            case DC_DIMMING_TILE:
+                openActivitySafely(new Intent(this, DcDimmingSettingsActivity.class));
+                break;
             case DIRAC_TILE:
                 openActivitySafely(new Intent(this, DiracActivity.class));
                 break;
