@@ -317,6 +317,7 @@ PRODUCT_PACKAGES += \
     init.qti.dcvs.sh \
     init.qcom.rc \
     init.qcom.usb.rc \
+    init.recovery.qcom.rc \
     init.sweet.rc \
     init.target.rc \
     ueventd.sweet.rc
