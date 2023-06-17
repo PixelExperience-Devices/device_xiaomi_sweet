@@ -41,7 +41,11 @@ public class DcDimmingTileService extends TileService {
     public void onStartListening() {
         super.onStartListening();
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
-        updateUI(sharedPrefs.getBoolean(DC_DIMMING_ENABLE_KEY, false));
+        if (!FileUtils.fileExists(DC_DIMMING_NODE)) {
+            getQsTile().setState(Tile.STATE_UNAVAILABLE);
+        } else {
+            updateUI(sharedPrefs.getBoolean(DC_DIMMING_ENABLE_KEY, false));
+        }
     }
 
     @Override
