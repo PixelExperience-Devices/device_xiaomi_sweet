@@ -1309,26 +1309,26 @@ vendor/etc/init/vendor.qti.hardware.soter@1.0-service.rc
 vendor/lib64/hw/vendor.qti.hardware.soter@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.soter@1.0.so
 
-# Thermal
-vendor/bin/mi_thermald
-vendor/bin/thermal-engine
-vendor/etc/init/init.mi_thermald.rc
-vendor/etc/init/init_thermal-engine.rc
-vendor/etc/thermal-camera.conf
-vendor/etc/thermal-chg-only.conf
-vendor/etc/thermal-class0.conf
-vendor/etc/thermal-engine.conf
-vendor/etc/thermal-map.conf
-vendor/etc/thermal-mgame.conf
-vendor/etc/thermal-navigation.conf
-vendor/etc/thermal-nolimits.conf
-vendor/etc/thermal-normal.conf
-vendor/etc/thermal-phone.conf
-vendor/etc/thermal-tgame.conf
-vendor/etc/thermal-video.conf
-vendor/etc/thermal-youtube.conf
-vendor/etc/thermald-devices.conf
-vendor/lib64/libthermalclient.so
+# Thermal - from sweetin-user 11 RKQ1.200826.002 V12.5.10.0.RKFINXM release-keys
+vendor/bin/mi_thermald|41be8f8f215f793f331e75d3fb5ae344d88a15c6
+vendor/bin/thermal-engine|e74184e124c41e51535fad6a6ad9cc089695211b
+vendor/etc/init/init.mi_thermald.rc|93377ddf881f27dabb2918adbe7215934eb8531f
+vendor/etc/init/init_thermal-engine.rc|f0d14aa4734b2e8afd61a4eed73238187b268f48
+vendor/etc/thermal-camera.conf|5a7b9cdd1eb5545c86153e5007aee4d3644ce19a
+vendor/etc/thermal-chg-only.conf|7ce2272cfe16c045409d356fc5c5e460fa8d9a4f
+vendor/etc/thermal-class0.conf|e8d6a593e8a267792aa07a193d4966b3aa33ce42
+vendor/etc/thermal-engine.conf|c6c9312b7c7b52926cf7d0fc9bff933d90967100
+vendor/etc/thermal-map.conf|7172da0eab91527a1eae0c449ed3a4461cb7047f
+vendor/etc/thermal-mgame.conf|c2f4b729c48668f7ace63c2dd7284d88a2153243
+vendor/etc/thermal-navigation.conf|f12fa3a206491a15c65e48d22ebe03deb713e78e
+vendor/etc/thermal-nolimits.conf|4d86837c2a6a18d0673831e2a083a9df31f716c8
+vendor/etc/thermal-normal.conf|f089d2811f0ea6f61dbe0f171317736c73f12b53
+vendor/etc/thermal-phone.conf|cd1e4328a3e86c7a583e517d94765d1d00e21954
+vendor/etc/thermal-tgame.conf|ad4e48a9201abda68f79cf1ac69fdff935ad2d31
+vendor/etc/thermal-video.conf|d30fe747baae88e598041b08cd178b730ed634f4
+vendor/etc/thermal-youtube.conf|655bdba808074a4f14700c53899ecd9668976046
+vendor/etc/thermald-devices.conf|62d475be3ee174f332eb7497cb37c73df2ed8d8a
+vendor/lib64/libthermalclient.so|41274c82e1a472d12b2ebcb4156f7f77b109efa8
 
 # Time
 vendor/app/TimeService/TimeService.apk
