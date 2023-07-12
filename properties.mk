@@ -38,7 +38,6 @@ vendor.audio_hal.period_size=192
 # Audio (ximi)
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.vendor.audio.delta.refresh=false \
-persist.vendor.audio.misound.disable=true \
 persist.vendor.audio.ring.filter.mask=0 \
 ro.vendor.audio.camera.loopback.support=true \
 ro.vendor.audio.scenario.support=true \
