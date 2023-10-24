@@ -1,11 +1,5 @@
-# Allow xiaomiparts_app to find hal_displayfeature_xiaomi_hwservice
-allow xiaomiparts_app hal_displayfeature_xiaomi_hwservice:hwservice_manager find;
-
 # Allow xiaomiparts_app to find hal_touchfeature_xiaomi_hwservice
 allow xiaomiparts_app hal_touchfeature_xiaomi_hwservice:hwservice_manager find;
-
-# Allow binder communication with hal_displayfeature_xiaomi_default
-binder_call(xiaomiparts_app, hal_displayfeature_xiaomi_default)
 
 # Allow binder communication with hal_touchfeature_xiaomi_default
 binder_call(xiaomiparts_app, hal_touchfeature_xiaomi_default)

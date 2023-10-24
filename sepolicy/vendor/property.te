@@ -1,6 +1,3 @@
-# DisplayFeatureHal
-vendor_internal_prop(vendor_displayfeature_prop);
-
 # Fingerprint
 vendor_public_prop(vendor_fp_prop);
 
