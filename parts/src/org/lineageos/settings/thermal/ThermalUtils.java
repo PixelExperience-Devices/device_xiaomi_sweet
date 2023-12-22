@@ -207,10 +207,10 @@ public final class ThermalUtils {
         int touchActiveMode = (touchResponse != 0 && touchSensitivity != 0 && touchResistant != 0)
                 ? 1 : 0;
         try {
-            mTouchFeature.setTouchMode(Constants.MODE_TOUCH_TOLERANCE, touchSensitivity);
-            mTouchFeature.setTouchMode(Constants.MODE_TOUCH_UP_THRESHOLD, touchResponse);
-            mTouchFeature.setTouchMode(Constants.MODE_TOUCH_EDGE_FILTER, touchResistant);
-            mTouchFeature.setTouchMode(Constants.MODE_TOUCH_GAME_MODE, gameMode);
+            mTouchFeature.setModeValue(0, Constants.MODE_TOUCH_TOLERANCE, touchSensitivity);
+            mTouchFeature.setModeValue(0, Constants.MODE_TOUCH_UP_THRESHOLD, touchResponse);
+            mTouchFeature.setModeValue(0, Constants.MODE_TOUCH_EDGE_FILTER, touchResistant);
+            mTouchFeature.setModeValue(0, Constants.MODE_TOUCH_GAME_MODE, gameMode);
         } catch (RemoteException e) {
             // Do nothing
         }
@@ -224,10 +224,10 @@ public final class ThermalUtils {
         }
 
         try {
-            mTouchFeature.resetTouchMode(Constants.MODE_TOUCH_GAME_MODE);
-            mTouchFeature.resetTouchMode(Constants.MODE_TOUCH_UP_THRESHOLD);
-            mTouchFeature.resetTouchMode(Constants.MODE_TOUCH_TOLERANCE);
-            mTouchFeature.resetTouchMode(Constants.MODE_TOUCH_EDGE_FILTER);
+            mTouchFeature.modeReset(0, Constants.MODE_TOUCH_GAME_MODE);
+            mTouchFeature.modeReset(0, Constants.MODE_TOUCH_UP_THRESHOLD);
+            mTouchFeature.modeReset(0, Constants.MODE_TOUCH_TOLERANCE);
+            mTouchFeature.modeReset(0, Constants.MODE_TOUCH_EDGE_FILTER);
         } catch (RemoteException e) {
             // Do nothing
         }
