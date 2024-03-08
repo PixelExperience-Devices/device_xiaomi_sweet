@@ -20,7 +20,6 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
-import com.android.settingslib.widget.R;
 
 public class TouchSettingsActivity extends CollapsingToolbarBaseActivity {
 
@@ -31,7 +30,7 @@ public class TouchSettingsActivity extends CollapsingToolbarBaseActivity {
         super.onCreate(savedInstanceState);
         TouchSettingsFragment touchSettingsFragment = new TouchSettingsFragment();
         touchSettingsFragment.setArguments(getIntent().getExtras());
-        getFragmentManager().beginTransaction().replace(R.id.content_frame,
+        getFragmentManager().beginTransaction().replace(com.android.settingslib.collapsingtoolbar.R.id.content_frame,
                 touchSettingsFragment, TAG_TOUCH).commit();
     }
 
