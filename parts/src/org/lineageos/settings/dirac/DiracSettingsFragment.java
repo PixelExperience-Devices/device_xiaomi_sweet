@@ -17,7 +17,8 @@
 package org.lineageos.settings.dirac;
 
 import android.os.Bundle;
-import android.widget.Switch;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.util.Log;
 
 import androidx.preference.ListPreference;
@@ -27,12 +28,11 @@ import androidx.preference.PreferenceFragment;
 import androidx.preference.SwitchPreference;
 
 import com.android.settingslib.widget.MainSwitchPreference;
-import com.android.settingslib.widget.OnMainSwitchChangeListener;
 
 import org.lineageos.settings.R;
 
 public class DiracSettingsFragment extends PreferenceFragment implements
-        OnPreferenceChangeListener, OnMainSwitchChangeListener {
+        OnPreferenceChangeListener, OnCheckedChangeListener {
 
     private static final String TAG = "DiracSettingsFragment";
     private static final String PREF_ENABLE = "dirac_enable";
@@ -94,7 +94,7 @@ public class DiracSettingsFragment extends PreferenceFragment implements
     }
 
     @Override
-    public void onSwitchChanged(Switch switchView, boolean isChecked) {
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         mSwitchBar.setChecked(isChecked);
 
         if (mDiracUtils == null) return;
